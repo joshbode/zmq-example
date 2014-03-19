@@ -1,7 +1,7 @@
 Installation
 ------------
 
-- Install [ØMQ](http://zeromq.org/) library:
+1. Install [ØMQ](http://zeromq.org/) library:
 
       - Linux (on [Debian](http://debian.org/)):
 
@@ -11,23 +11,25 @@ Installation
 
             $ brew install zeromq
 
-- Install [Python](http://python.org/) ØMQ bindings:
+2. Install [Python](http://python.org/) ØMQ bindings:
 
         $ pip install pyzmq supervisord
 
-- Install [Julia](http://julialang.org/) ØMQ bindings:
+3. Install [Julia](http://julialang.org/) ØMQ bindings:
 
         $ julia
 
         julia> Pkg.add("ZMQ")
         julia> Pkg.add("Logging")  # required for example only
 
+4. Clone this repository.
+
 Running
 -------
 
 1. Start `supervisord` using the provided configuration:
 
-        $ supervisord -c ~/zmq-test/supervisord.conf
+        $ supervisord -c ~/zmq-example/supervisord.conf
 
 2. Connect to the [supervisor management page](http://localhost:9001/)
 

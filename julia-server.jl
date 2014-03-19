@@ -4,7 +4,9 @@ using JSON
 using ZMQ
 using Logging
 
-PORT = 5555
+BASE_PORT = int(ARGS[1])
+WORKER = int(ARGS[2])
+PORT = BASE_PORT + WORKER
 
 Logging.configure(level=Logging.DEBUG)
 
@@ -19,7 +21,8 @@ while true
     data = ZMQ.recv(socket)
     data = JSON.parse(takebuf_string(convert(IOStream, data)))
     Logging.info("Received: [", join(data, ", "), "]")
-    result = std(data)
+    result = ["Worker: $WORKER", std(data)]
+    sleep(1)
     ZMQ.send(socket, JSON.json(result))
     Logging.info("Sent: $result")
 end

@@ -31,8 +31,10 @@ def main():
         data = random.sample(range(100), 10)
         socket.send_json(data)
         logging.info("Sent: {0}".format(data))
-        result = socket.recv_json()
-        logging.info("Received: {0}".format(result))
+        result_type, worker, result = socket.recv_json()
+        logging.info(
+            "Received: {0}: {1}: {2}".format(result_type, worker, result)
+        )
         time.sleep(1)
 
 if __name__ == '__main__':

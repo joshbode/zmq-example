@@ -21,8 +21,7 @@ while true
     data = ZMQ.recv(socket)
     data = JSON.parse(takebuf_string(convert(IOStream, data)))
     Logging.info("Received: [", join(data, ", "), "]")
-    result = ["Worker: $WORKER", std(data)]
-    sleep(1)
+    result = ["std", @sprintf("Julia (%02d)", WORKER), std(data)]
     ZMQ.send(socket, JSON.json(result))
     Logging.info("Sent: $result")
 end

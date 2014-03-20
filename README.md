@@ -5,13 +5,11 @@ Installation
       - Linux (on [Debian](http://debian.org/)):
 
             $ apt-get install libzmq-dev
-
       - OS X (using [homebrew](http://brew.sh/)):
 
             $ brew install zeromq
             $ brew tap bertjwregeer/homebrew-compat
             $ brew install cppzmq  # required for rzmq
-
 2. Install [Python](http://python.org/) ØMQ bindings:
 
         $ pip install pyzmq

@@ -18,8 +18,7 @@ ZMQ.bind(socket, "tcp://*:$PORT")
 Logging.info("Ready")
 
 while true
-    data = ZMQ.recv(socket)
-    data = JSON.parse(takebuf_string(convert(IOStream, data)))
+    data = JSON.parse(takebuf_string(convert(IOStream, ZMQ.recv(socket))))
     Logging.info("Received: [", join(data, ", "), "]")
     result = ["std", @sprintf("Julia (%02d)", WORKER), std(data)]
     ZMQ.send(socket, JSON.json(result))

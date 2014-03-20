@@ -2,19 +2,15 @@ Installation
 ------------
 
 1. Install [ØMQ](http://zeromq.org/) library:
-
       - Linux (on [Debian](http://debian.org/)):
 
             $ apt-get install libzmq-dev
-
       - OS X (using [homebrew](http://brew.sh/)):
 
             $ brew install zeromq
-
 2. Install [Python](http://python.org/) ØMQ bindings:
 
         $ pip install pyzmq supervisord
-
 3. Install [Julia](http://julialang.org/) ØMQ bindings:
 
         $ julia
@@ -22,7 +18,14 @@ Installation
         julia> Pkg.add("ZMQ")
         julia> Pkg.add("Logging")  # required for example only
 
-4. Clone this repository.
+4. Install [R](http://r-project.org/) ØMQ bindings:
+
+        $ R
+
+        > install.packages("rzmq")
+        > install.packages(c("logging", "rjson"))  # required for example only
+
+5. Clone this repository.
 
 Running
 -------
